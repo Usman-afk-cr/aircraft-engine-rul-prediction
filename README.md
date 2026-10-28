@@ -28,9 +28,6 @@ Detailed evaluation results and visualizations are available in the [`results/`]
 
 *Note: These are project validation results, not official NASA test-set benchmark results.*
 
-## Technology Stack
-
-Python · TensorFlow/Keras · Scikit-learn · XGBoost · LightGBM · Pandas · NumPy · Streamlit
 
 ## Installation and Usage
 
