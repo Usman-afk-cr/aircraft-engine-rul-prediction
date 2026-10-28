@@ -1,0 +1,6 @@
+Dataset,Observed_Cycles,Sequence_Length,Padding_Used,Predicted_RUL,Risk_Level,Maintenance_Priority,Recommendation,Engine_ID,Status,Error,Priority_Order
+FD002,148,50,0,12.32,Critical,P1,Immediate maintenance required,5,Success,,1
+FD002,258,50,0,14.86,Critical,P1,Immediate maintenance required,1,Success,,1
+FD002,86,50,0,75.37,Moderate,P3,Increase monitoring frequency,4,Success,,3
+FD002,165,50,0,102.08,Healthy,P4,Continue routine monitoring,3,Success,,4
+FD002,55,50,0,103.96,Healthy,P4,Continue routine monitoring,2,Success,,4

@@ -1,0 +1,14 @@
+Parameter,Final Value
+Sequence Length,50
+Number of Sensors,16
+Learning Rate,0.0005
+Dropout,0.2
+Conv Kernel Sizes,"3, 5, 7"
+Conv Filters,32 per branch
+Recurrent Layer,Bidirectional GRU
+GRU Units,64 per direction
+Temporal Attention,Yes
+Feature Attention,Yes
+Batch Size,256
+Loss Function,MSE
+Optimizer,Adam

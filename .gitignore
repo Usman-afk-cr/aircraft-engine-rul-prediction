@@ -1,0 +1,25 @@
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+.ipynb_checkpoints/
+.vscode/
+.idea/
+*.log
+*.tmp
+# Large intermediate checkpoint - keep local for now
+/checkpoints/phase_01_ml_checkpoint.joblib
+
+# Python and notebook cache
+__pycache__/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+.env.*
+!.env.example

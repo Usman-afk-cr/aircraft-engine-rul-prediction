@@ -1,0 +1,21 @@
+Dataset,Observed_Cycles,Padding_Used,History_Quality,Predicted_RUL,Predicted_RUL_Raw,Risk_Level,Maintenance_Priority,Recommendation,RUL_Cap_Reference,Input_Mean,Input_Std,Input_Min,Input_Max,Engine_ID,Status,Error,Priority_Order
+FD002,50,0,Recommended,18.94,18.9366,Critical,P1,Immediate maintenance required,125,0.4943,1.329,-2.4114,7.1549,20,Success,,1
+FD002,50,0,Recommended,20.22,20.2194,Critical,P1,Immediate maintenance required,125,0.1805,0.7523,-2.0634,2.3656,16,Success,,1
+FD002,50,0,Recommended,20.97,20.9743,Critical,P1,Immediate maintenance required,125,-0.1317,0.7181,-2.6836,2.404,19,Success,,1
+FD002,50,0,Recommended,23.12,23.1159,Critical,P1,Immediate maintenance required,125,0.5649,1.0475,-2.2743,7.1549,18,Success,,1
+FD002,50,0,Recommended,24.27,24.2679,Critical,P1,Immediate maintenance required,125,-0.0491,0.799,-1.9488,2.0002,17,Success,,1
+FD002,50,0,Recommended,49.69,49.69,High Risk,P2,Schedule maintenance soon,125,-0.1339,0.6618,-2.4039,2.1972,12,Success,,2
+FD002,50,0,Recommended,52.87,52.8704,High Risk,P2,Schedule maintenance soon,125,0.2439,0.8013,-2.2743,2.2053,13,Success,,2
+FD002,50,0,Recommended,53.5,53.4953,High Risk,P2,Schedule maintenance soon,125,-0.0665,0.6709,-1.8709,2.5742,11,Success,,2
+FD002,50,0,Recommended,64.15,64.1468,Moderate,P3,Increase monitoring frequency,125,-0.0168,0.7753,-2.2267,2.4758,8,Success,,3
+FD002,50,0,Recommended,70.14,70.1414,Moderate,P3,Increase monitoring frequency,125,0.094,0.9164,-2.4114,2.4925,15,Success,,3
+FD002,50,0,Recommended,87.29,87.293,Moderate,P3,Increase monitoring frequency,125,-0.1888,0.8192,-2.6364,2.8191,14,Success,,3
+FD002,50,0,Recommended,94.59,94.5853,Healthy,P4,Continue routine monitoring,125,-0.2171,0.7519,-2.4527,2.5742,6,Success,,4
+FD002,50,0,Recommended,95.59,95.5917,Healthy,P4,Continue routine monitoring,125,-0.0485,0.8913,-2.3113,2.4925,10,Success,,4
+FD002,50,0,Recommended,99.96,99.9585,Healthy,P4,Continue routine monitoring,125,-0.2585,0.7361,-3.0129,2.6343,2,Success,,4
+FD002,50,0,Recommended,101.35,101.3544,Healthy,P4,Continue routine monitoring,125,-0.2094,0.674,-3.0129,2.1972,7,Success,,4
+FD002,50,0,Recommended,104.51,104.5094,Healthy,P4,Continue routine monitoring,125,-0.1184,0.9718,-2.2502,7.1549,3,Success,,4
+FD002,50,0,Recommended,109.26,109.2603,Healthy,P4,Continue routine monitoring,125,-0.2972,0.7135,-2.3611,2.5024,5,Success,,4
+FD002,50,0,Recommended,112.76,112.764,Healthy,P4,Continue routine monitoring,125,-0.2217,0.9368,-3.0202,2.915,9,Success,,4
+FD002,50,0,Recommended,118.0,118.0013,Healthy,P4,Continue routine monitoring,125,-0.3332,0.8197,-2.5013,3.0971,1,Success,,4
+FD002,50,0,Recommended,118.32,118.3217,Healthy,P4,Continue routine monitoring,125,-0.0864,0.9196,-2.3113,2.6612,4,Success,,4
