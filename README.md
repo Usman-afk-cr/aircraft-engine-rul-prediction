@@ -1,157 +1,70 @@
-
 # Aircraft Engine Remaining Useful Life (RUL) Prediction
 
-A machine learning and deep learning project for predicting the Remaining Useful Life (RUL) of aircraft engines using NASA C-MAPSS FD002 and FD003 datasets.
+**Research Implementation of CAUC-AeroRULNet — A Condition-Aware Hybrid Deep Learning Framework for Aircraft Engine Prognostics**
 
-The project introduces **CAUC-AeroRULNet**, a condition-aware hybrid deep learning framework, and provides maintenance decision support through risk categories and a Streamlit dashboard.
+This repository contains the implementation and experimental evaluation of a deep learning framework for predicting aircraft engine Remaining Useful Life (RUL) using NASA C-MAPSS FD002 and FD003 datasets.
 
-## Project Overview
-
-Remaining Useful Life (RUL) estimates how many operational cycles an engine may have left before reaching its end of useful life. Reliable RUL estimates can help maintenance teams plan inspections and reduce unexpected failures.
-
-This project combines traditional machine learning baselines, deep learning models, model evaluation, and a dashboard for exploring predictions.
+The project investigates a hybrid architecture combining multiscale convolutional feature extraction, bidirectional recurrent modelling, and attention mechanisms for sensor time-series analysis.
 
 ## Key Features
 
-- Aircraft engine RUL prediction.
-- Support for NASA C-MAPSS FD002 and FD003.
-- Machine learning baselines: Random Forest, XGBoost, and LightGBM.
-- BiLSTM and CAUC-AeroRULNet deep learning models.
-- Sensor selection and preprocessing.
-- Model evaluation using MAE, RMSE, and R².
-- Maintenance risk classification based on predicted RUL.
-- Streamlit dashboard for individual predictions, fleet monitoring, and research results.
+- CAUC-AeroRULNet model implementation
+- RUL prediction using multivariate sensor sequences
+- Comparison with Random Forest, XGBoost, LightGBM, and BiLSTM
+- Operating-condition-aware preprocessing for FD002
+- Sensor feature analysis
+- Maintenance risk categorization
+- Streamlit dashboard for RUL prediction and fleet monitoring
 
-## Proposed Model: CAUC-AeroRULNet
+## Methodology
 
-The proposed framework combines:
+The workflow includes sensor selection, data preprocessing, sequence generation, deep learning model training, and validation against baseline models. The implementation also maps predicted RUL values to predefined maintenance priority categories.
 
-- Multi-branch 1D convolutional layers to learn temporal patterns.
-- Bidirectional GRU layers to capture sequence information.
-- Temporal and feature attention mechanisms.
-- A regression head to predict RUL.
+## Experimental Results
 
-The workflow uses 50-cycle input sequences and 16 selected engine sensors.
+The recorded validation results show that CAUC-AeroRULNet achieved the best RMSE and R² among the evaluated models on both FD002 and FD003. BiLSTM achieved lower MAE on both datasets.
 
-For FD002, the preprocessing pipeline includes operating-condition clustering and condition-aware sensor normalization. FD003 uses global sensor normalization.
+Detailed evaluation results and visualizations are available in the [`results/`](results/) directory.
 
-## Project Structure
+*Note: These are project validation results, not official NASA test-set benchmark results.*
 
-```text
-aircraft-engine-rul-prediction/
-├── app/                  # Streamlit application and inference code
-├── checkpoints/          # Saved training and preprocessing artifacts
-├── data/
-│   └── raw/              # NASA C-MAPSS dataset files
-├── deployment/           # Deployment configuration and sample outputs
-├── models/               # Trained deep learning models
-├── notebooks/            # Experiments and analysis
-├── results/              # Evaluation tables, predictions, and figures
-├── .gitignore
-└── README.md
+## Technology Stack
+
+Python · TensorFlow/Keras · Scikit-learn · XGBoost · LightGBM · Pandas · NumPy · Streamlit
+
+## Installation and Usage
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Usman-afk-cr/aircraft-engine-rul-prediction.git
+cd aircraft-engine-rul-prediction
 ```
 
-## Dataset
-
-The project uses the NASA C-MAPSS turbofan engine simulation datasets:
-
-- **FD002:** Multiple operating conditions and fault modes.
-- **FD003:** A single operating condition with multiple fault modes.
-
-The data includes engine operating settings and sensor measurements collected over successive cycles.
-
-Dataset files are located in `data/raw/`.
-
-## Evaluation
-
-The project evaluates models using:
-
-- **MAE:** Mean Absolute Error.
-- **RMSE:** Root Mean Squared Error.
-- **R²:** Coefficient of Determination.
-- **NASA scoring function:** An asymmetric penalty-based evaluation metric.
-
-Reported validation results include:
-
-| Dataset | Model | MAE | RMSE | R² |
-|---|---|---:|---:|---:|
-| FD002 | CAUC-AeroRULNet | 10.1087 | 13.3602 | 0.8935 |
-| FD003 | CAUC-AeroRULNet | 8.5568 | 11.3140 | 0.9270 |
-
-These are validation results, not official NASA test-set results. See the files in `results/` for additional model comparisons and evaluation outputs.
-
-## Maintenance Decision Support
-
-Predicted RUL values are mapped to maintenance priority categories using the following rule-based policy:
-
-| Predicted RUL | Risk Category | Priority |
-|---|---|---|
-| 0–30 cycles | Critical | P1 |
-| 31–60 cycles | High Risk | P2 |
-| 61–90 cycles | Moderate | P3 |
-| Above 90 cycles | Healthy | P4 |
-
-These categories are derived from predicted RUL thresholds; they are not the output of a separately trained four-class classifier.
-
-## Installation
-
-Python dependencies will be listed in `requirements.txt`.
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/Usman-afk-cr/aircraft-engine-rul-prediction.git
-   cd aircraft-engine-rul-prediction
-   ```
-
-2. Create and activate a virtual environment:
-
-   ```bash
-   python -m venv .venv
-   ```
-
-   Windows:
-
-   ```bash
-   .venv\Scripts\activate
-   ```
-
-3. Install dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## Run the Streamlit Application
-
-From the repository root, run:
+Install the project's dependencies, then run:
 
 ```bash
 streamlit run app/app.py
 ```
 
-The application provides RUL prediction, fleet monitoring, model performance, research analysis, and system checks.
+## Research Paper
 
-**Note:** The app depends on the trained models and preprocessing artifacts in this repository. The environment must include compatible versions of the required libraries.
+**Status:** Written — not yet submitted.
 
-## Limitations
+The associated research manuscript has been prepared but has not been submitted for publication. No publication or peer-review acceptance is claimed.
 
-- Reported results are based on validation evaluations.
-- Official NASA test-set evaluation is not reported here.
-- RUL-based maintenance categories use predefined thresholds.
-- Results may vary with preprocessing, model configuration, and evaluation methodology.
+## Limitations and Future Work
 
-## Future Work
+Further work includes official NASA test-set evaluation, uncertainty estimation, expanded robustness testing, and improved reproducibility.
 
-- Evaluate on official NASA test sets.
-- Conduct repeated-seed experiments and ablation studies.
-- Improve prediction uncertainty estimates.
-- Expand deployment monitoring and model reliability checks.
+## Author
 
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+**Muhammad Usman**
 
 ## Acknowledgements
 
-The project uses the NASA C-MAPSS turbofan engine simulation datasets for prognostics research.
+NASA C-MAPSS turbofan engine degradation datasets.
+
+## License
+
+Released under the MIT License. See [`LICENSE`](LICENSE) for details.
